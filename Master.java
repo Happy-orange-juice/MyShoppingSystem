@@ -1,7 +1,6 @@
 package MyShoppingSystem_0_0;
 /**
  * @author 李宗
- * @date 2021/7/18
  */
 public class Master {
 

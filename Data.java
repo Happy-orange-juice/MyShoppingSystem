@@ -60,6 +60,7 @@ public class Data {
 
     }
 
+
     public void initial_goods(){
         Connection c = null;
         Statement stmt = null;

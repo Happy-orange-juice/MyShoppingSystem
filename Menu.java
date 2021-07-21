@@ -75,7 +75,11 @@ public class Menu {
                     }
                     break;
                 case 3://用户新注册一个账号
+                    System.out.println("欢迎注册我们的账户");
+                    System.out.println("提示1：用户名必须大于5位");
+                    System.out.println("提示2：用户密码必须大于8位且必须由数字、大小写字母以及标点组成");
                     User user = new User();
+                    user.user_register(data);
                     break;
                 case 4: // 用户选择"退出"
                     System.out.println("谢谢您的使用！");
@@ -98,8 +102,9 @@ public class Menu {
             switch (s) {
                 case "1":
                     for (int i = 0; i < data.users.size(); i++) {
-                        System.out.println(data.users.get(i).userName + " " + data.users.get(i).userID +
-                                " " + data.users.get(i).userLever);
+                        System.out.println(data.users.get(i).userID + " " + data.users.get(i).userName
+                                + " " + data.users.get(i).user_phoneNumber + " " + data.users.get(i).user_email
+                                + " "+ data.users.get(i).user_rg_time);
                     }
                     break;
                 case "2": {
@@ -108,7 +113,8 @@ public class Menu {
                     for (int j = 0; j < data.users.size(); j++) {
                         if (data.users.get(j).userID == n) {
                             System.out.println(data.users.get(j).userID + " " + data.users.get(j).userName
-                                    + " " + data.users.get(j).user_phoneNumber + " " + data.users.get(j).user_email);
+                                    + " " + data.users.get(j).user_phoneNumber + " " + data.users.get(j).user_email
+                                    + " "+ data.users.get(j).user_rg_time);
                             break;
                         }
                     }
@@ -232,7 +238,8 @@ public class Menu {
                     showBuy(data,s);
                 }
                 case "2" -> {
-                    showPage(data);
+                    User u = new User();
+                    u.user_password_modify(data,s);
                 }
                 case "3" -> {
                     System.out.println("确认登出");
@@ -256,7 +263,6 @@ public class Menu {
                     shopping.list(data,s);
                 }
                 case "2" -> {
-                    System.out.println("请输入要购买的用户ID:");
                     shopping.buy(data,s);
                 }
                 case "3" -> {
@@ -266,5 +272,4 @@ public class Menu {
             }
         } while (!flag);
     }
-
 }
