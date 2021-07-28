@@ -16,11 +16,14 @@ public class test {
 
             stmt = c.createStatement();
             String sql = "CREATE TABLE COMPANY " +
-                    "(ID INT PRIMARY KEY     NOT NULL," +
-                    " NAME           TEXT    NOT NULL, " +
-                    " AGE            INT     NOT NULL, " +
-                    " ADDRESS        CHAR(50), " +
-                    " SALARY         REAL)";
+                    "(userID INT PRIMARY KEY     NOT NULL," +
+                    " userName           TEXT    NOT NULL, " +
+                    " userLever          CHAR(50)," +
+                    " password           CHAR(50), " +
+                    " user_email         CHAR(50),"+
+                    " user_phoneNumber   CHAR(11)," +
+                    " user_re_time       CHAR(50)," +
+                    " user_bill INT      NOT  NULL)";
             stmt.executeUpdate(sql);
             stmt.close();
             c.close();

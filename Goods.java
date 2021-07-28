@@ -20,4 +20,13 @@ public class Goods {
         goods_size    = new String();
         goods_number  = new String();
     }
+    public void goods_modify(Data data){
+        for (int i = 0; i < data.goods.size(); i++) {
+            
+        }
+    }
+    public void goods_add(Data data){
+
+    }
+
 }
