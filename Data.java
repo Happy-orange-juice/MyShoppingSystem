@@ -3,14 +3,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.sql.*;
 /**
- * @author æå®—
- * æœ¬ç±»ç”¨äºå­˜æ”¾è´­ç‰©ç³»ç»Ÿçš„åˆå§‹åŒ–æ•°æ®çš„æ•°æ®ç±»ã€‚
+ * @author Àî×Ú
+ * ±¾ÀàÓÃÓÚ´æ·Å¹ºÎïÏµÍ³µÄ³õÊ¼»¯Êı¾İµÄÊı¾İÀà¡£
  */
 
 
 public class Data {
-    /*====================å®šä¹‰è¯¥ç±»æ‰€æ‹¥æœ‰çš„å˜é‡====================*/
-    public Master master	;	// ç®¡ç†å‘˜ç±»
+    /*====================¶¨Òå¸ÃÀàËùÓµÓĞµÄ±äÁ¿====================*/
+    public Master master	;	// ¹ÜÀíÔ±Àà
     public List<User> users = new ArrayList<User>();
     public List<Goods> goods = new ArrayList<Goods>();
     public String name;

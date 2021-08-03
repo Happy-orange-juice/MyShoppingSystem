@@ -5,15 +5,15 @@ import java.util.Date;
 import java.util.Scanner;
 
 /**
- * @author æå®—
+ * @author Àî×Ú
  * @date 2021/7/18
  */
 public class User {
-    /*====================å®šä¹‰è¯¥ç±»æ‰€æ‹¥æœ‰çš„å˜é‡====================*/
-    public String userName;		// ç”¨æˆ·å
-    public String password;		// å¯†ç 
-    public int    userID;	// é¡¾å®¢çš„ID
-    public String userLever;	// ç”¨æˆ·çº§åˆ«
+    /*====================¶¨Òå¸ÃÀàËùÓµÓĞµÄ±äÁ¿====================*/
+    public String userName;		// ÓÃ»§Ãû
+    public String password;		// ÃÜÂë
+    public int    userID;	// ¹Ë¿ÍµÄID
+    public String userLever;	// ÓÃ»§¼¶±ğ
     public String user_phoneNumber;
     public String user_email;
     public String user_rg_time;
@@ -31,47 +31,47 @@ public class User {
         User user = new User();
         Scanner sc = new Scanner(System.in);
         int n = data.users.size();
-        System.out.println("æ‚¨çš„ç¼–å·å·²ç»è‡ªåŠ¨ç”Ÿæˆä¸ºï¼š"+(n+1));
+        System.out.println("ÄúµÄ±àºÅÒÑ¾­×Ô¶¯Éú³ÉÎª£º"+(n+1));
         user.userID=n+1;
-        System.out.println("è¯·è¾“å…¥æ‚¨çš„ç”¨æˆ·åï¼š");
+        System.out.println("ÇëÊäÈëÄúµÄÓÃ»§Ãû£º");
         String s = sc.next();
         if (s.length()<5){
-            System.out.println("ç”¨æˆ·åå¿…é¡»å¤§äº5ä½");
+            System.out.println("ÓÃ»§Ãû±ØĞë´óÓÚ5Î»");
             m.showPage(data);
         } else {
             for (int i = 0; i < data.users.size(); i++) {
                 if (s.equals(data.users.get(i).userName)){
-                    System.out.println("æ­¤ç”¨æˆ·åå·²ç»å­˜åœ¨ï¼ï¼ï¼");
+                    System.out.println("´ËÓÃ»§ÃûÒÑ¾­´æÔÚ£¡£¡£¡");
                     m.showPage(data);
                 }
             }
-            System.out.println("æ­¤ç”¨æˆ·åæ˜¯åˆæ³•çš„");
+            System.out.println("´ËÓÃ»§ÃûÊÇºÏ·¨µÄ");
             user.userName=s;
         }
-        System.out.println("è¯·è¾“å…¥æ‚¨çš„å¯†ç ");
+        System.out.println("ÇëÊäÈëÄúµÄÃÜÂë");
         String s1 = sc.next();
         if (user_password_judge(s1)){
-            System.out.println("è¯·å†æ¬¡ç¡®è®¤å¯†ç ï¼š");
+            System.out.println("ÇëÔÙ´ÎÈ·ÈÏÃÜÂë£º");
             String s2 = sc.next();
             if (s1.equals(s2)){
-                System.out.println("æ­å–œæ‚¨ï¼Œæ³¨å†ŒæˆåŠŸ");
+                System.out.println("¹§Ï²Äú£¬×¢²á³É¹¦");
                 user.password=s2;
             } else {
-                System.out.println("ä¸¤æ¬¡è¾“å…¥çš„å¯†ç ä¸ä¸€æ ·ï¼");
+                System.out.println("Á½´ÎÊäÈëµÄÃÜÂë²»Ò»Ñù£¡");
                 m.showPage(data);
             }
         } else {
-            System.out.println("å¯†ç å¿…é¡»åŒ…æ‹¬æ•°å­—ã€å¤§å°å†™å­—æ¯å’Œæ ‡ç‚¹ç¬¦å·ï¼");
+            System.out.println("ÃÜÂë±ØĞë°üÀ¨Êı×Ö¡¢´óĞ¡Ğ´×ÖÄ¸ºÍ±êµã·ûºÅ£¡");
             m.showPage(data);
         }
         Date dateTime=new Date();
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String currentTime=df.format(dateTime);
         user.user_rg_time=currentTime;
-        System.out.println("è¯·è¾“å…¥æ‚¨çš„ç”µè¯å·ç ï¼š");
+        System.out.println("ÇëÊäÈëÄúµÄµç»°ºÅÂë£º");
         String s2 = sc.next();
         user.user_phoneNumber=s2;
-        System.out.println("è¯·è¾“å…¥æ‚¨çš„é‚®ç®±åœ°å€ï¼š");
+        System.out.println("ÇëÊäÈëÄúµÄÓÊÏäµØÖ·£º");
         String s3 = sc.next();
         user.user_email=s3;
         data.users.add(user);
@@ -82,21 +82,21 @@ public class User {
         Scanner sc = new Scanner(System.in);
         for (int i = 0; i < data.users.size(); i++) {
             if (data.users.get(i).userName.equals(s)){
-                System.out.println("è¯·è¾“å…¥æ‚¨ä¿®æ”¹åçš„å¯†ç ");
+                System.out.println("ÇëÊäÈëÄúĞŞ¸ÄºóµÄÃÜÂë");
                 String s1 = sc.next();
                 if (user_password_judge(s1)){
-                    System.out.println("è¯·å†æ¬¡ç¡®è®¤ä¿®æ”¹åçš„å¯†ç ï¼š");
+                    System.out.println("ÇëÔÙ´ÎÈ·ÈÏĞŞ¸ÄºóµÄÃÜÂë£º");
                     String s2 = sc.next();
                     if (s1.equals(s2)){
-                        System.out.println("æ­å–œæ‚¨ï¼Œå¯†ç ä¿®æ”¹æˆåŠŸ");
+                        System.out.println("¹§Ï²Äú£¬ÃÜÂëĞŞ¸Ä³É¹¦");
                         data.users.get(i).password=s1;
                         m.showPage(data);
                     } else {
-                        System.out.println("ä¸¤æ¬¡è¾“å…¥çš„å¯†ç ä¸ä¸€æ ·ï¼");
+                        System.out.println("Á½´ÎÊäÈëµÄÃÜÂë²»Ò»Ñù£¡");
                         m.showUser(data,s);
                     }
                 } else {
-                    System.out.println("å¯†ç å¿…é¡»åŒ…æ‹¬æ•°å­—ã€å¤§å°å†™å­—æ¯å’Œæ ‡ç‚¹ç¬¦å·ï¼");
+                    System.out.println("ÃÜÂë±ØĞë°üÀ¨Êı×Ö¡¢´óĞ¡Ğ´×ÖÄ¸ºÍ±êµã·ûºÅ£¡");
                     m.showUser(data,s);
                 }
             }
@@ -113,11 +113,11 @@ public class User {
         return false;
     }
     public boolean isPswComplex(String password){
-        //æ•°å­—
+        //Êı×Ö
         final String REG_NUMBER = ".*\\d+.*";
-        //å¤§å†™å­—æ¯
+        //´óĞ´×ÖÄ¸
         final String REG_UPPERCASE = ".*[A-Z]+.*";
-        //å°å†™å­—æ¯
+        //Ğ¡Ğ´×ÖÄ¸
         final String REG_LOWERCASE = ".*[a-z]+.*";
 
         if (password == null || password.length() <8 ) return false;

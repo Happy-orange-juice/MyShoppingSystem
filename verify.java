@@ -3,7 +3,7 @@ package MyShoppingSystem_0_0;
 import java.util.Scanner;
 
 /**
- * @author æå®—
+ * @author Àî×Ú
  * @date 2021/7/18
  */
 public class verify {
@@ -11,11 +11,11 @@ public class verify {
     }
     public boolean Master_verify(Data data) {
         Scanner scanner = new Scanner(System.in);
-        // ç”±ç”¨æˆ·è¾“å…¥å¯†ç 
-        System.out.print("è¯·è¾“å…¥æ‚¨çš„å¯†ç ï¼š");
+        // ÓÉÓÃ»§ÊäÈëÃÜÂë
+        System.out.print("ÇëÊäÈëÄúµÄÃÜÂë£º");
         scanner = new Scanner(System.in);
         String s2 = scanner.next();
-        // åˆ¤æ–­ç”¨æˆ·è¾“å…¥çš„ä¿¡æ¯æ˜¯å¦å’Œå·²æœ‰çš„ä¿¡æ¯ä¸€è‡´
+        // ÅĞ¶ÏÓÃ»§ÊäÈëµÄĞÅÏ¢ÊÇ·ñºÍÒÑÓĞµÄĞÅÏ¢Ò»ÖÂ
         if(data.master.M_password.equals(s2)){
             return true;
         } else {
@@ -24,8 +24,8 @@ public class verify {
     }
     public boolean User_verify(Data data) {
         Scanner scanner = new Scanner(System.in);
-        // ç”±ç”¨æˆ·è¾“å…¥å¯†ç 
-        System.out.print("è¯·è¾“å…¥å¯†ç ï¼š");
+        // ÓÉÓÃ»§ÊäÈëÃÜÂë
+        System.out.print("ÇëÊäÈëÃÜÂë£º");
         scanner = new Scanner(System.in);
         String s2 = scanner.next();
 
@@ -33,7 +33,7 @@ public class verify {
                 if(data.users.get(i).password.equals(s2));
                 return true;
         }
-        // åˆ¤æ–­ç”¨æˆ·è¾“å…¥çš„ä¿¡æ¯æ˜¯å¦å’Œå·²æœ‰çš„ä¿¡æ¯ä¸€è‡´
+        // ÅĞ¶ÏÓÃ»§ÊäÈëµÄĞÅÏ¢ÊÇ·ñºÍÒÑÓĞµÄĞÅÏ¢Ò»ÖÂ
         return false;
     }
 

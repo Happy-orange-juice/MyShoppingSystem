@@ -1,18 +1,21 @@
 package MyShoppingSystem_0_0;
 
+import java.util.Scanner;
+
 /**
- * @author æå®—
+ * @author Àî×Ú
  * @date 2021/7/19
  */
 public class Goods {
-    public String goodsName;		// ç”¨æˆ·å
-    public String Producer;		// å¯†ç 
-    public int    goodsID;	// é¡¾å®¢çš„ID
-    public String goods_Date;	// ç”¨æˆ·çº§åˆ«
+    public String goodsName;
+    public String Producer;
+    public int    goodsID;
+    public String goods_Date;
     public String goods_size;
     public String goods_number;
     public int goods_count;
     public int goods_s_count;
+    page page = new page();
     public Goods() {
         goodsName     = new String();
         Producer      = new String();
@@ -21,8 +24,20 @@ public class Goods {
         goods_number  = new String();
     }
     public void goods_modify(Data data){
+        System.out.println("ÇëÊäÈëÄúÒªĞŞ¸ÄµÄÉÌÆ·±àºÅ£º");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        boolean flag = false;
         for (int i = 0; i < data.goods.size(); i++) {
-            
+            if(data.goods.get(i).goodsID==n){
+                flag = true;
+            }
+        }
+        if (flag){
+            page.show_Goods_change();
+            System.out.println("ÇëÊäÈëÄúÒªĞŞ¸ÄµÄÊı¾İ±àºÅ£º");
+            int l = sc.nextInt();
+
         }
     }
     public void goods_add(Data data){

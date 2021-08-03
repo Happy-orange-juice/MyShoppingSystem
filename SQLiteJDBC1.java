@@ -1,7 +1,7 @@
 package MyShoppingSystem_0_0;
 
 /**
- * @author 鏉庡畻
+ * @author 李宗
  * @date 2021/7/18
  */
 import java.sql.*;
@@ -19,15 +19,15 @@ public class SQLiteJDBC1
 
             stmt = c.createStatement();
             String sql = "INSERT INTO COMPANY (userID,userName,userLever,password,user_email,user_phoneNumber,user_re_time,user_bill) " +
-                    "VALUES (1, 'mike','閲戠墝瀹㈡埛',123123, '1457271810@qq.com', '17873424332','2021/7/19',120);";
+                    "VALUES (1, 'mike','金牌客户',123123, '1457271810@qq.com', '17873424332','2021/7/19',120);";
             stmt.executeUpdate(sql);
 
             sql = "INSERT INTO COMPANY (userID,userName,userLever,password,user_email,user_phoneNumber,user_re_time,user_bill)" +
-                    "VALUES (2, 'gray','閾剁墝瀹㈡埛',123132, '1457271810@qq.com', '17873424332','2021/7/19',110);";
+                    "VALUES (2, 'gray','银牌客户',123132, '1457271810@qq.com', '17873424332','2021/7/19',110);";
             stmt.executeUpdate(sql);
 
             sql = "INSERT INTO COMPANY (userID,userName,userLever,password,user_email,user_phoneNumber,user_re_time,user_bill) " +
-                    "VALUES (3, 'wyy','閾滅墝瀹㈡埛',123213, '1457271810@qq.com', '17873424332','2021/7/19',100);";
+                    "VALUES (3, 'wyy','铜牌客户',123213, '1457271810@qq.com', '17873424332','2021/7/19',100);";
             stmt.executeUpdate(sql);
 
             stmt.close();

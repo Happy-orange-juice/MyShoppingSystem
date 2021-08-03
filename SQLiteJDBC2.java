@@ -1,7 +1,7 @@
 package MyShoppingSystem_0_0;
 
 /**
- * @author æå®—
+ * @author Àî×Ú
  * @date 2021/7/19
  */
 import java.sql.*;
@@ -19,35 +19,35 @@ public class SQLiteJDBC2
 
             stmt = c.createStatement();
             String sql = "INSERT INTO GOODS (goodsID,goodsName,Producer,goods_Date,goods_size,goods_number,goods_count,goods_s_count) " +
-                    "VALUES (1, 'æµè¡Œé£è¡£','åŒ—äº¬å‚å®¶','2021/7/19', 'big', '120',80,200);";
+                    "VALUES (1, 'Á÷ĞĞ·çÒÂ','±±¾©³§¼Ò','2021/7/19', 'big', '120',80,200);";
             stmt.executeUpdate(sql);
 
             sql = "INSERT INTO GOODS (goodsID,goodsName,Producer,goods_Date,goods_size,goods_number,goods_count,goods_s_count) " +
-                    "VALUES (2, 'å¥³å¼å¤§è¡£','å—äº¬å‚å®¶','2021/7/19', 'big', '100',70,120);";
+                    "VALUES (2, 'Å®Ê½´óÒÂ','ÄÏ¾©³§¼Ò','2021/7/19', 'big', '100',70,120);";
             stmt.executeUpdate(sql);
 
             sql = "INSERT INTO GOODS (goodsID,goodsName,Producer,goods_Date,goods_size,goods_number,goods_count,goods_s_count) " +
-                    "VALUES (3, 'æ³•å¼Vé¢†','åŒ—äº¬å‚å®¶','2021/7/19', 'middle', '10',180,219);";
+                    "VALUES (3, '·¨Ê½VÁì','±±¾©³§¼Ò','2021/7/19', 'middle', '10',180,219);";
             stmt.executeUpdate(sql);
 
             sql = "INSERT INTO GOODS (goodsID,goodsName,Producer,goods_Date,goods_size,goods_number,goods_count,goods_s_count) " +
-                    "VALUES (4, 'ç‹å°é¸­å¥—è£…','æ¹–å—å‚å®¶','2021/7/19', 'middle', '1000',810,2100);";
+                    "VALUES (4, 'ÍõĞ¡Ñ¼Ì××°','ºşÄÏ³§¼Ò','2021/7/19', 'middle', '1000',810,2100);";
             stmt.executeUpdate(sql);
 
             sql = "INSERT INTO GOODS (goodsID,goodsName,Producer,goods_Date,goods_size,goods_number,goods_count,goods_s_count) " +
-                    "VALUES (5, 'æçº¢äº”åˆ†è¢–å¥—è£…','æ¹–å—å‚å®¶','2021/7/19', 'small', '27',180,220);";
+                    "VALUES (5, 'ÀîºìÎå·ÖĞäÌ××°','ºşÄÏ³§¼Ò','2021/7/19', 'small', '27',180,220);";
             stmt.executeUpdate(sql);
 
             sql = "INSERT INTO GOODS (goodsID,goodsName,Producer,goods_Date,goods_size,goods_number,goods_count,goods_s_count) " +
-                    "VALUES (6, 'å¡ç±³å…°å¥—è£…','æ¹–åŒ—å‚å®¶','2021/7/19', 'small', '1200',80,102);";
+                    "VALUES (6, '¿¨Ã×À¼Ì××°','ºş±±³§¼Ò','2021/7/19', 'small', '1200',80,102);";
             stmt.executeUpdate(sql);
 
             sql = "INSERT INTO GOODS (goodsID,goodsName,Producer,goods_Date,goods_size,goods_number,goods_count,goods_s_count) " +
-                    "VALUES (7, 'å¦ˆå¦ˆå¤è£…','å¹¿ä¸œå‚å®¶','2021/7/19', 'middle', '25',80,200);";
+                    "VALUES (7, 'ÂèÂèÏÄ×°','¹ã¶«³§¼Ò','2021/7/19', 'middle', '25',80,200);";
             stmt.executeUpdate(sql);
 
             sql = "INSERT INTO GOODS (goodsID,goodsName,Producer,goods_Date,goods_size,goods_number,goods_count,goods_s_count) " +
-                    "VALUES (8, 'ç¢èŠ±è¿è¡£è£™','å¹¿è¥¿å‚å®¶','2021/7/19', 'big', '29',72,120);";
+                    "VALUES (8, 'Ëé»¨Á¬ÒÂÈ¹','¹ãÎ÷³§¼Ò','2021/7/19', 'big', '29',72,120);";
             stmt.executeUpdate(sql);
 
             stmt.close();

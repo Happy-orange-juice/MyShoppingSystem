@@ -1,6 +1,6 @@
 package MyShoppingSystem_0_0;
 /**
- * @author æå®—
+ * @author Àî×Ú
  */
 public class start {
     public start() {}

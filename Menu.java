@@ -2,7 +2,7 @@ package MyShoppingSystem_0_0;
 import java.util.Scanner;
 
 /**
- * @author æå®—
+ * @author Àî×Ú
  */
 public class Menu {
 
@@ -12,18 +12,18 @@ public class Menu {
         verify ver = new verify();
         boolean flag;
         do {
-            // å‘ç”Ÿæ“ä½œé”™è¯¯ï¼Œé€€å‡ºç³»ç»Ÿ
-            // è¾“å…¥ä¸€çº§èœå•ä¸­çš„é€‰æ‹©
+            // ·¢Éú²Ù×÷´íÎó£¬ÍË³öÏµÍ³
+            // ÊäÈëÒ»¼¶²Ëµ¥ÖĞµÄÑ¡Ôñ
             Menu menu = new Menu();
             Scanner scanner = new Scanner(System.in);
             int i = scanner.nextInt();
-            // æ ¹æ®ç”¨æˆ·å¯¹ä¸€çº§èœå•çš„é€‰æ‹©åšå‡ºä¸åŒçš„å“åº”ï¼Œæ³¨æ„è¿™é‡Œå°±æ˜¯ç»å…¸çš„switch-caseçš„ç”¨æ³•
+            // ¸ù¾İÓÃ»§¶ÔÒ»¼¶²Ëµ¥µÄÑ¡Ôñ×ö³ö²»Í¬µÄÏìÓ¦£¬×¢ÒâÕâÀï¾ÍÊÇ¾­µäµÄswitch-caseµÄÓÃ·¨
             switch (i) {
-                case 1: // ç”¨æˆ·é€‰æ‹©"ç™»å½•ç³»ç»Ÿ"
+                case 1: // ÓÃ»§Ñ¡Ôñ"µÇÂ¼ÏµÍ³"
                     int j = 5;
-                    System.out.print("è¯·è¾“å…¥æ‚¨çš„ç”¨æˆ·åï¼š");
+                    System.out.print("ÇëÊäÈëÄúµÄÓÃ»§Ãû£º");
                     String s1 = scanner.next();
-                    // å¤„ç†ç™»å½•ç³»ç»Ÿçš„æµç¨‹
+                    // ´¦ÀíµÇÂ¼ÏµÍ³µÄÁ÷³Ì
                     boolean flag1 = false;
                     for (int k = 0; k < data.users.size(); k++) {
                         if (data.users.get(k).userName.equals(s1)){
@@ -37,25 +37,25 @@ public class Menu {
                                 if(ver.User_verify(data)){
                                     menu.showUser(data,s1);
                                 }else {
-                                    System.out.println("æ‚¨å·²ç»è¾“é”™"+(k+1)+"æ¬¡å¯†ç ,è¿˜æœ‰"+(j-k-1)+"æ¬¡æœºä¼š");
+                                    System.out.println("ÄúÒÑ¾­Êä´í"+(k+1)+"´ÎÃÜÂë,»¹ÓĞ"+(j-k-1)+"´Î»ú»á");
                                 }
                             } else if (k==5){
-                                System.out.println("å¯¹ä¸èµ·ï¼æ‚¨æ²¡æœ‰æƒé™è¿›å…¥ç³»ç»Ÿï¼è°¢è°¢!è¯¥è´¦æˆ·å·²ç»é”æ­»ï¼");
+                                System.out.println("¶Ô²»Æğ£¡ÄúÃ»ÓĞÈ¨ÏŞ½øÈëÏµÍ³£¡Ğ»Ğ»!¸ÃÕË»§ÒÑ¾­ËøËÀ£¡");
                                 showPage(data);
                             }
                         }
                     }else {
-                        System.out.println("å¯¹ä¸èµ·ï¼Œæ­¤ç”¨æˆ·ä¸å­˜åœ¨ï¼Œè¯·é‡æ–°è¾“å…¥ç”¨æˆ·åï¼š");
+                        System.out.println("¶Ô²»Æğ£¬´ËÓÃ»§²»´æÔÚ£¬ÇëÖØĞÂÊäÈëÓÃ»§Ãû£º");
                         showPage(data);
                     }
                     break;
 
-                case 2: // ç®¡ç†å‘˜é€‰æ‹©"ç™»å½•ç³»ç»Ÿ"
+                case 2: // ¹ÜÀíÔ±Ñ¡Ôñ"µÇÂ¼ÏµÍ³"
                     int k = 5;
-                    System.out.print("è¯·è¾“å…¥æ‚¨çš„ç”¨æˆ·åï¼š");
+                    System.out.print("ÇëÊäÈëÄúµÄÓÃ»§Ãû£º");
                     String s2 = scanner.next();
                     if (!data.master.M_username.equals(s2)){
-                        System.out.println("å¯¹ä¸èµ·ï¼Œæ­¤ç”¨æˆ·ä¸å­˜åœ¨ï¼Œè¯·é‡æ–°è¾“å…¥ç”¨æˆ·åï¼š");
+                        System.out.println("¶Ô²»Æğ£¬´ËÓÃ»§²»´æÔÚ£¬ÇëÖØĞÂÊäÈëÓÃ»§Ãû£º");
                         showPage(data);
                     }
                     else {
@@ -65,28 +65,28 @@ public class Menu {
                                     menu.showMasterMenu(data);
                                     break;
                                 }else {
-                                    System.out.println("æ‚¨å·²ç»è¾“é”™"+(l+1)+"æ¬¡å¯†ç ,è¿˜æœ‰"+(k-l-1)+"æ¬¡æœºä¼š");
+                                    System.out.println("ÄúÒÑ¾­Êä´í"+(l+1)+"´ÎÃÜÂë,»¹ÓĞ"+(k-l-1)+"´Î»ú»á");
                                 }
                             } else if (l==5){
-                                System.out.println("å¯¹ä¸èµ·ï¼æ‚¨æ²¡æœ‰æƒé™è¿›å…¥ç³»ç»Ÿï¼è°¢è°¢!è¯¥è´¦æˆ·å·²ç»é”æ­»ï¼");
+                                System.out.println("¶Ô²»Æğ£¡ÄúÃ»ÓĞÈ¨ÏŞ½øÈëÏµÍ³£¡Ğ»Ğ»!¸ÃÕË»§ÒÑ¾­ËøËÀ£¡");
                                 showPage(data);
                             }
                         }
                     }
                     break;
-                case 3://ç”¨æˆ·æ–°æ³¨å†Œä¸€ä¸ªè´¦å·
-                    System.out.println("æ¬¢è¿æ³¨å†Œæˆ‘ä»¬çš„è´¦æˆ·");
-                    System.out.println("æç¤º1ï¼šç”¨æˆ·åå¿…é¡»å¤§äº5ä½");
-                    System.out.println("æç¤º2ï¼šç”¨æˆ·å¯†ç å¿…é¡»å¤§äº8ä½ä¸”å¿…é¡»ç”±æ•°å­—ã€å¤§å°å†™å­—æ¯ä»¥åŠæ ‡ç‚¹ç»„æˆ");
+                case 3://ÓÃ»§ĞÂ×¢²áÒ»¸öÕËºÅ
+                    System.out.println("»¶Ó­×¢²áÎÒÃÇµÄÕË»§");
+                    System.out.println("ÌáÊ¾1£ºÓÃ»§Ãû±ØĞë´óÓÚ5Î»");
+                    System.out.println("ÌáÊ¾2£ºÓÃ»§ÃÜÂë±ØĞë´óÓÚ8Î»ÇÒ±ØĞëÓÉÊı×Ö¡¢´óĞ¡Ğ´×ÖÄ¸ÒÔ¼°±êµã×é³É");
                     User user = new User();
                     user.user_register(data);
                     break;
-                case 4: // ç”¨æˆ·é€‰æ‹©"é€€å‡º"
-                    System.out.println("è°¢è°¢æ‚¨çš„ä½¿ç”¨ï¼");
+                case 4: // ÓÃ»§Ñ¡Ôñ"ÍË³ö"
+                    System.out.println("Ğ»Ğ»ÄúµÄÊ¹ÓÃ£¡");
                     System.exit(0);
                     break;
-                default: // ä¸€çº§èœå•è¾“å…¥é”™è¯¯ï¼Œéœ€è¦é‡æ–°é€‰æ‹©
-                    System.out.print("\nè¾“å…¥æœ‰è¯¯ï¼è¯·é‡æ–°é€‰æ‹©ï¼Œè¾“å…¥æ•°å­—: ");
+                default: // Ò»¼¶²Ëµ¥ÊäÈë´íÎó£¬ĞèÒªÖØĞÂÑ¡Ôñ
+                    System.out.print("\nÊäÈëÓĞÎó£¡ÇëÖØĞÂÑ¡Ôñ£¬ÊäÈëÊı×Ö: ");
                     break;
             }
             flag=false;
@@ -108,7 +108,7 @@ public class Menu {
                     }
                     break;
                 case "2": {
-                    System.out.println("è¯·è¾“å…¥è¦æŸ¥è¯¢çš„ç”¨æˆ·ID:");
+                    System.out.println("ÇëÊäÈëÒª²éÑ¯µÄÓÃ»§ID:");
                     int n = scanner.nextInt();
                     for (int j = 0; j < data.users.size(); j++) {
                         if (data.users.get(j).userID == n) {
@@ -120,11 +120,11 @@ public class Menu {
                     }
                     break;
                 }
-                //åˆ é™¤ç”¨æˆ·ä¿¡æ¯
+                //É¾³ıÓÃ»§ĞÅÏ¢
                 case "3": {
-                    System.out.println("è¯·è¾“å…¥è¦åˆ é™¤çš„ç”¨æˆ·ID:");
+                    System.out.println("ÇëÊäÈëÒªÉ¾³ıµÄÓÃ»§ID:");
                     int n = scanner.nextInt();
-                    System.out.println("ç¡®è®¤è¦åˆ é™¤è¿™ä¸ªå•†å“å—ï¼Ÿåˆ é™¤ä»¥åæ— æ³•æ¢å¤:Y/n");
+                    System.out.println("È·ÈÏÒªÉ¾³ıÕâ¸öÓÃ»§Âğ£¿É¾³ıÒÔºóÎŞ·¨»Ö¸´:Y/n");
                     String s2 = scanner.next();
                     if (s2.equals("y") || s2.equals("Y") || s2.equals("yes") || s2.equals("Yes")) {
                         for (int j = 0; j < data.users.size(); j++) {
@@ -137,35 +137,35 @@ public class Menu {
                         break label;
                     }
                 }
-                //é‡ç½®ç”¨æˆ·å¯†ç 
+                //ÖØÖÃÓÃ»§ÃÜÂë
                 case "4": {
-                    System.out.println("è¯·è¾“å…¥è¦é‡åˆ¶çš„ç”¨æˆ·ID:");
+                    System.out.println("ÇëÊäÈëÒªÖØÖÆµÄÓÃ»§ID:");
                     int n = scanner.nextInt();
                     for (int j = 0; j < data.users.size(); j++) {
                         if (data.users.get(j).userID == n) {
                             data.users.get(j).password = "123123123";
-                            System.out.println("å¯†ç å·²ç»é‡ç½®ä¸º123123123");
+                            System.out.println("ÃÜÂëÒÑ¾­ÖØÖÃÎª123123123");
                             break;
                         }
                     }
                     break;
                 }
-                //è¿›å…¥å•†å“ç®¡ç†ç•Œé¢
+                //½øÈëÉÌÆ·¹ÜÀí½çÃæ
                 case "5":
                     showGoods_information(data);
                     break;
                 case "6":
-                    System.out.println("è¯·è¾“å…¥ä¿®æ”¹åçš„å¯†ç ï¼š");
+                    System.out.println("ÇëÊäÈëĞŞ¸ÄºóµÄÃÜÂë£º");
                     data.master.M_password=scanner.next();
-                    System.out.println("å¯†ç å·²ç»ä¿®æ”¹æˆåŠŸï¼Œä¸‹æ¬¡ç™»é™†å°†ä½¿ç”¨æ–°å¯†ç ");
+                    System.out.println("ÃÜÂëÒÑ¾­ĞŞ¸Ä³É¹¦£¬ÏÂ´ÎµÇÂ½½«Ê¹ÓÃĞÂÃÜÂë");
                     showPage(data);
                     break ;
-                // å®¢æˆ·é€‰æ‹©"è¿”å›ä¸Šä¸€çº§èœå•"
+                // ¿Í»§Ñ¡Ôñ"·µ»ØÉÏÒ»¼¶²Ëµ¥"
                 case "n":
                     showPage(data);
                     break label;
                 default:
-                    System.out.println("è¾“å…¥é”™è¯¯, è¯·é‡æ–°è¾“å…¥æ•°å­—ï¼š");
+                    System.out.println("ÊäÈë´íÎó, ÇëÖØĞÂÊäÈëÊı×Ö£º");
                     break;
             }
             flag = false;
@@ -181,10 +181,10 @@ public class Menu {
             flag = false;
             switch (s) {
                 case "1" -> {
-                    System.out.println("å•†å“ç¼–å·" + "  å•†å“åç§°" +
-                            "  ç”Ÿäº§å•†" + "  å•†å“å°ºå¯¸" +
-                            "  ç”Ÿäº§æ—¥æœŸ" + "  è¿›ä»·" +
-                            "  å”®ä»·" + "  å•†å“å‰©ä½™é‡" + "\n");
+                    System.out.println("ÉÌÆ·±àºÅ" + "  ÉÌÆ·Ãû³Æ" +
+                            "  Éú²úÉÌ" + "  ÉÌÆ·³ß´ç" +
+                            "  Éú²úÈÕÆÚ" + "  ½ø¼Û" +
+                            "  ÊÛ¼Û" + "  ÉÌÆ·Ê£ÓàÁ¿" + "\n");
                     for (int i = 0; i < data.goods.size(); i++) {
                         System.out.println(data.goods.get(i).goodsID + "  " +
                                 data.goods.get(i).goodsName + "  " + data.goods.get(i).Producer + "  " +
@@ -194,7 +194,7 @@ public class Menu {
                     }
                 }
                 case "2" -> {
-                    System.out.println("è¯·è¾“å…¥è¦æŸ¥è¯¢çš„å•†å“ID:");
+                    System.out.println("ÇëÊäÈëÒª²éÑ¯µÄÉÌÆ·ID:");
                     int n = scanner.nextInt();
                     for (int i = 0; i < data.goods.size(); i++) {
                         if (data.goods.get(i).goodsID == n) {
@@ -208,9 +208,9 @@ public class Menu {
                     }
                 }
                 case "3" -> {
-                    System.out.println("è¯·è¾“å…¥è¦åˆ é™¤çš„å•†å“ID:");
+                    System.out.println("ÇëÊäÈëÒªÉ¾³ıµÄÉÌÆ·ID:");
                     int n = scanner.nextInt();
-                    System.out.println("ç¡®è®¤è¦åˆ é™¤è¿™ä¸ªå•†å“å—ï¼Ÿåˆ é™¤ä»¥åæ— æ³•æ¢å¤:Y/n");
+                    System.out.println("È·ÈÏÒªÉ¾³ıÕâ¸öÉÌÆ·Âğ£¿É¾³ıÒÔºóÎŞ·¨»Ö¸´:Y/n");
                     String s2 = scanner.next();
                     if (s2.equals("y") || s2.equals("Y") || s2.equals("yes") || s2.equals("Yes")) {
                         for (int j = 0; j < data.goods.size(); j++) {
@@ -222,6 +222,16 @@ public class Menu {
                     } else {
                         break label;
                     }
+                }
+                case "4" ->{
+                    Goods goods = new Goods();
+                    goods.goods_modify(data);
+                    break ;
+                }
+                case "5" ->{
+                    Goods goods = new Goods();
+                    goods.goods_add(data);
+                    break ;
                 }
                 case "n" -> showMasterMenu(data);
             }
@@ -242,7 +252,7 @@ public class Menu {
                     u.user_password_modify(data,s);
                 }
                 case "3" -> {
-                    System.out.println("ç¡®è®¤ç™»å‡º");
+                    System.out.println("È·ÈÏµÇ³ö");
                     if (scanner.next().equals("y")||scanner.next().equals("Y")||scanner.next().equals("yes")||scanner.next().equals("Yes")){
                         showPage(data);
                     }

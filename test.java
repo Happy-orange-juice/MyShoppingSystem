@@ -1,7 +1,7 @@
 package MyShoppingSystem_0_0;
 import java.sql.*;
 /**
- * @author æå®—
+ * @author Àî×Ú
  * @date 2021/7/19
  */
 public class test {

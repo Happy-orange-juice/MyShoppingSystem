@@ -3,63 +3,76 @@ package MyShoppingSystem_0_0;
 import java.util.Scanner;
 
 /**
- * @author æå®—
+ * @author Àî×Ú
  */
 public class page {
 
     public void show_goods(){
-        System.out.println("è´­ç‰©ç®¡ç†ç³»ç»Ÿ > å®¢æˆ·ä¿¡æ¯ç®¡ç†\n");
+        System.out.println("¹ºÎï¹ÜÀíÏµÍ³ > ¿Í»§ĞÅÏ¢¹ÜÀí\n");
         System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
-        System.out.println("\t\t\t\t 1. æ˜¾ ç¤º æ‰€ æœ‰ å•† å“ ä¿¡ æ¯\n");
-        System.out.println("\t\t\t\t 2. æŸ¥ è¯¢ å•† å“ ä¿¡ æ¯\n");
-        System.out.println("\t\t\t\t 3. åˆ  é™¤ å•† å“ ä¿¡ æ¯\n");
-        System.out.println("\t\t\t\t 4. é‡ ç½® å•† å“ ä¿¡ æ¯\n");
+        System.out.println("\t\t\t\t 1. ÏÔ Ê¾ Ëù ÓĞ ÉÌ Æ· ĞÅ Ï¢\n");
+        System.out.println("\t\t\t\t 2. ²é Ñ¯ ÉÌ Æ· ĞÅ Ï¢\n");
+        System.out.println("\t\t\t\t 3. É¾ ³ı ÉÌ Æ· ĞÅ Ï¢\n");
+        System.out.println("\t\t\t\t 4. ĞŞ ¸Ä ÉÌ Æ· ĞÅ Ï¢\n");
+        System.out.println("\t\t\t\t 5. Ôö ¼Ó ÉÌ Æ· ĞÅ Ï¢\n");
         System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
-        System.out.print("è¯·é€‰æ‹©,è¾“å…¥æ•°å­—æˆ–æŒ‰'n'è¿”å›ä¸Šä¸€çº§èœå•:");
+        System.out.print("ÇëÑ¡Ôñ,ÊäÈëÊı×Ö»ò°´'n'·µ»ØÉÏÒ»¼¶²Ëµ¥:");
     }
     public void show_master(){
-        System.out.println("è´­ç‰©ç®¡ç†ç³»ç»Ÿ > å®¢æˆ·ä¿¡æ¯ç®¡ç†\n");
+        System.out.println("¹ºÎï¹ÜÀíÏµÍ³ > ¿Í»§ĞÅÏ¢¹ÜÀí\n");
         System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
-        System.out.println("\t\t\t\t 1. æ˜¾ ç¤º æ‰€ æœ‰ å®¢ æˆ· ä¿¡ æ¯\n");
-        System.out.println("\t\t\t\t 2. æŸ¥ è¯¢ å®¢ æˆ· ä¿¡ æ¯\n");
-        System.out.println("\t\t\t\t 3. åˆ  é™¤ å®¢ æˆ· ä¿¡ æ¯\n");
-        System.out.println("\t\t\t\t 4. é‡ ç½® å®¢ æˆ· ä¿¡ æ¯\n");
-        System.out.println("\t\t\t\t 5. å•† å“ ä¿¡ æ¯ ç®¡ ç†\n");
-        System.out.println("\t\t\t\t 6. ä¿® æ”¹ ç®¡ ç† å‘˜ å¯† ç \n");
+        System.out.println("\t\t\t\t 1. ÏÔ Ê¾ Ëù ÓĞ ¿Í »§ ĞÅ Ï¢\n");
+        System.out.println("\t\t\t\t 2. ²é Ñ¯ ¿Í »§ ĞÅ Ï¢\n");
+        System.out.println("\t\t\t\t 3. É¾ ³ı ¿Í »§ ĞÅ Ï¢\n");
+        System.out.println("\t\t\t\t 4. ÖØ ÖÃ ¿Í »§ ĞÅ Ï¢\n");
+        System.out.println("\t\t\t\t 5. ÉÌ Æ· ĞÅ Ï¢ ¹Ü Àí\n");
+        System.out.println("\t\t\t\t 6. ĞŞ ¸Ä ¹Ü Àí Ô± ÃÜ Âë\n");
         System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
-        System.out.print("è¯·é€‰æ‹©,è¾“å…¥æ•°å­—æˆ–æŒ‰'n'è¿”å›ä¸Šä¸€çº§èœå•:");
+        System.out.print("ÇëÑ¡Ôñ,ÊäÈëÊı×Ö»ò°´'n'·µ»ØÉÏÒ»¼¶²Ëµ¥:");
     }
     public void show_LoginMenu() {
-        System.out.println("\n\n\t\t\tæ¬¢è¿ä½¿ç”¨æˆ‘çš„è´­ç‰©ç®¡ç†ç³»ç»Ÿ å¦‚æœæ˜¯é¦–æ¬¡ç™»é™†è¯·é€‰æ‹©æ³¨å†Œé¡µé¢\n\n");
+        System.out.println("\n\n\t\t\t»¶Ó­Ê¹ÓÃÎÒµÄ¹ºÎï¹ÜÀíÏµÍ³ Èç¹ûÊÇÊ×´ÎµÇÂ½ÇëÑ¡Ôñ×¢²áÒ³Ãæ\n\n");
         System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
-        System.out.println("\t\t\t\t 1. ç”¨ æˆ· ç™» å½•\n\n");
-        System.out.println("\t\t\t\t 2. ç®¡ ç† å‘˜ ç™» é™†\n\n");
-        System.out.println("\t\t\t\t 3. ç”¨ æˆ· æ³¨ å†Œ\n\n");
-        System.out.println("\t\t\t\t 4. é€€ å‡º\n\n");
+        System.out.println("\t\t\t\t 1. ÓÃ »§ µÇ Â¼\n\n");
+        System.out.println("\t\t\t\t 2. ¹Ü Àí Ô± µÇ Â½\n\n");
+        System.out.println("\t\t\t\t 3. ÓÃ »§ ×¢ ²á\n\n");
+        System.out.println("\t\t\t\t 4. ÍË ³ö\n\n");
         System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
-        System.out.print("è¯·é€‰æ‹©,è¾“å…¥æ•°å­—:");
+        System.out.print("ÇëÑ¡Ôñ,ÊäÈëÊı×Ö:");
     }
-
     public void show_MainMenu() {
-        // æ˜¾ç¤ºäºŒçº§èœå•ï¼Œå³ç³»ç»Ÿçš„ä¸»èœå•
-        System.out.println("\n\n\t\t\t\tæ¬¢è¿ä½¿ç”¨è´­ç‰©ç®¡ç†ç³»ç»Ÿ\n");
+        // ÏÔÊ¾¶ş¼¶²Ëµ¥£¬¼´ÏµÍ³µÄÖ÷²Ëµ¥
+        System.out.println("\n\n\t\t\t\t»¶Ó­Ê¹ÓÃ¹ºÎï¹ÜÀíÏµÍ³\n");
         System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
-        System.out.println("\t\t\t\t 1. è´­ ç‰© ç³» ç»Ÿ\n");
-        System.out.println("\t\t\t\t 2. ä¿® æ”¹ å¯† ç \n");
-        System.out.println("\t\t\t\t 3. ç”¨ æˆ· ç™» å‡º\n");
+        System.out.println("\t\t\t\t 1. ¹º Îï Ïµ Í³\n");
+        System.out.println("\t\t\t\t 2. ĞŞ ¸Ä ÃÜ Âë\n");
+        System.out.println("\t\t\t\t 3. ÓÃ »§ µÇ ³ö\n");
         System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
-        // ç”¨æˆ·é€‰æ‹©æœåŠ¡é¡¹ç›®
-        System.out.print("è¯·é€‰æ‹©,è¾“å…¥æ•°å­—:");
+        // ÓÃ»§Ñ¡Ôñ·şÎñÏîÄ¿
+        System.out.print("ÇëÑ¡Ôñ,ÊäÈëÊı×Ö:");
         Scanner scanner = new Scanner(System.in);
     }
-
     public void show_buy(){
-        System.out.println("è´­ç‰©ç®¡ç†ç³»ç»Ÿ > å®¢æˆ·ä¿¡æ¯ç®¡ç†\n");
+        System.out.println("¹ºÎï¹ÜÀíÏµÍ³ > ¹ºÎïÆ½Ì¨\n");
         System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
-        System.out.println("\t\t\t\t 1. æ˜¾ ç¤º æ‰€ æœ‰ å•† å“ ä¿¡ æ¯\n");
-        System.out.println("\t\t\t\t 2. é€‰ æ‹© è¦ è´­ ä¹° çš„ å•† å“\n");
-        System.out.println("\t\t\t\t 3. è´­ ç‰© ç»“ ç®—\n");
+        System.out.println("\t\t\t\t 1. ÏÔ Ê¾ Ëù ÓĞ ÉÌ Æ· ĞÅ Ï¢\n");
+        System.out.println("\t\t\t\t 2. Ñ¡ Ôñ Òª ¹º Âò µÄ ÉÌ Æ·\n");
+        System.out.println("\t\t\t\t 3. ¹º Îï ½á Ëã\n");
         System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
-        System.out.print("è¯·é€‰æ‹©,è¾“å…¥æ•°å­—æˆ–æŒ‰'n'è¿”å›ä¸Šä¸€çº§èœå•:");
+        System.out.print("ÇëÑ¡Ôñ,ÊäÈëÊı×Ö»ò°´'n'·µ»ØÉÏÒ»¼¶²Ëµ¥:");
+    }
+
+    public void show_Goods_change(){
+        System.out.println("¹ºÎï¹ÜÀíÏµÍ³ > ÉÌÆ·ĞÅÏ¢ĞŞ¸Ä\n");
+        System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
+        System.out.println("\t\t\t\t 1. ÉÌ Æ· Ãû ³Æ\n");
+        System.out.println("\t\t\t\t 2. Éú ²ú ²ú ¼Ò\n");
+        System.out.println("\t\t\t\t 3. Éú ²ú ÈÕ ÆÚ\n");
+        System.out.println("\t\t\t\t 4. ²ú Æ· ĞÍ ºÅ\n");
+        System.out.println("\t\t\t\t 5. ²ú Æ· Êı Á¿\n");
+        System.out.println("\t\t\t\t 6. ²ú Æ· ½ø ¼Û\n");
+        System.out.println("\t\t\t\t 7. ²ú Æ· ÊÛ ¼Û\n");
+        System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
+        System.out.print("ÇëÑ¡Ôñ,ÊäÈëÊı×Ö»ò°´'n'·µ»ØÉÏÒ»¼¶²Ëµ¥:");
     }
 }

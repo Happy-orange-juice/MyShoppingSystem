@@ -1,12 +1,12 @@
 package MyShoppingSystem_0_0;
 /**
- * @author æå®—
+ * @author Àî×Ú
  */
 public class Master {
 
-    /*====================å®šä¹‰è¯¥ç±»æ‰€æ‹¥æœ‰çš„å˜é‡====================*/
-    public String M_username;		// ç”¨æˆ·å
-    public String M_password;		// å¯†ç 
+    /*====================¶¨Òå¸ÃÀàËùÓµÓĞµÄ±äÁ¿====================*/
+    public String M_username;		// ÓÃ»§Ãû
+    public String M_password;		// ÃÜÂë
 
     public Master() {
         M_username = new String();

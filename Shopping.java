@@ -3,15 +3,15 @@ package MyShoppingSystem_0_0;
 import java.util.Scanner;
 
 /**
- * @author æå®—
+ * @author Àî×Ú
  */
 public class Shopping {
     Menu menu = new Menu();
     public void list(Data data,String s){
-        System.out.println("å•†å“ç¼–å·" + "  å•†å“åç§°" +
-                "  ç”Ÿäº§å•†" + "  å•†å“å°ºå¯¸" +
-                "  ç”Ÿäº§æ—¥æœŸ" + "  è¿›ä»·" +
-                "  å”®ä»·" + "  å•†å“å‰©ä½™é‡" + "\n");
+        System.out.println("ÉÌÆ·±àºÅ" + "  ÉÌÆ·Ãû³Æ" +
+                "  Éú²úÉÌ" + "  ÉÌÆ·³ß´ç" +
+                "  Éú²úÈÕÆÚ" + "  ½ø¼Û" +
+                "  ÊÛ¼Û" + "  ÉÌÆ·Ê£ÓàÁ¿" + "\n");
         for (int i = 0; i < data.goods.size(); i++) {
             System.out.println(data.goods.get(i).goodsID + "  " +
                     data.goods.get(i).goodsName + "  " + data.goods.get(i).Producer + "  " +
@@ -23,9 +23,9 @@ public class Shopping {
     }
     public void buy(Data data,String s){
         Scanner sc = new Scanner(System.in);
-        System.out.println("è¯·è¾“å…¥è¦è´­ä¹°çš„å•†å“ID:");
+        System.out.println("ÇëÊäÈëÒª¹ºÂòµÄÉÌÆ·ID:");
         int n = sc.nextInt();
-        System.out.println("è¯·è¾“å…¥è¦è´­ä¹°çš„å•†å“æ•°é‡:");
+        System.out.println("ÇëÊäÈëÒª¹ºÂòµÄÉÌÆ·ÊıÁ¿:");
         int m = sc.nextInt();
         for (int i = 0; i < data.goods.size(); i++) {
             if (data.goods.get(i).goodsID==n){
@@ -34,7 +34,7 @@ public class Shopping {
                         if(m<=Integer.parseInt(data.goods.get(i).goods_number)) {
                             data.users.get(j).user_bill += data.goods.get(i).goods_s_count*m;
                         } else if(m>Integer.parseInt(data.goods.get(i).goods_number)){
-                            System.out.println("å¯¹ä¸èµ·ï¼Œåº“å­˜ä¸è¶³");
+                            System.out.println("¶Ô²»Æğ£¬¿â´æ²»×ã");
                         }
                     }
                 }
@@ -47,46 +47,46 @@ public class Shopping {
             if (data.users.get(j).userName.equals(s)){
                 boolean flag;
                 if (data.users.get(j).user_bill>=2000&&data.users.get(j).user_bill<=5000){
-                    System.out.println("æ‚¨çš„æ¶ˆè´¹é¢ä¸ºï¼š"+data.users.get(j).user_bill);
+                    System.out.println("ÄúµÄÏû·Ñ¶îÎª£º"+data.users.get(j).user_bill);
                     flag=pay(data,s);
                     if (flag){
-                        System.out.println("æ‚¨çš„æ¶ˆè´¹é¢å·²ç»è¾¾åˆ°2000åœ†äº†ï¼æ­å–œæ‚¨ï¼Œå‡çº§ä¸ºé“œç‰Œç”¨æˆ·");
-                        data.users.get(j).userLever="é“œç‰Œç”¨æˆ·";
+                        System.out.println("ÄúµÄÏû·Ñ¶îÒÑ¾­´ïµ½2000Ô²ÁË£¡¹§Ï²Äú£¬Éı¼¶ÎªÍ­ÅÆÓÃ»§");
+                        data.users.get(j).userLever="Í­ÅÆÓÃ»§";
                     }
                 } else if(data.users.get(j).user_bill>5000&&data.users.get(j).user_bill<=10000){
-                    System.out.println("æ‚¨çš„æ¶ˆè´¹é¢ä¸ºï¼š"+data.users.get(j).user_bill);
+                    System.out.println("ÄúµÄÏû·Ñ¶îÎª£º"+data.users.get(j).user_bill);
                     flag=pay(data,s);
                     if (flag){
-                        System.out.println("æ‚¨çš„æ¶ˆè´¹é¢å·²ç»è¾¾åˆ°5000åœ†äº†ï¼æ­å–œæ‚¨ï¼Œå‡çº§ä¸ºé“¶ç‰Œç”¨æˆ·");
-                        data.users.get(j).userLever="é“¶ç‰Œç”¨æˆ·";
+                        System.out.println("ÄúµÄÏû·Ñ¶îÒÑ¾­´ïµ½5000Ô²ÁË£¡¹§Ï²Äú£¬Éı¼¶ÎªÒøÅÆÓÃ»§");
+                        data.users.get(j).userLever="ÒøÅÆÓÃ»§";
                     }
                 } else if(data.users.get(j).user_bill>10000){
-                    System.out.println("æ‚¨çš„æ¶ˆè´¹é¢ä¸ºï¼š"+data.users.get(j).user_bill);
+                    System.out.println("ÄúµÄÏû·Ñ¶îÎª£º"+data.users.get(j).user_bill);
                     flag=pay(data,s);
                     if (flag){
-                        System.out.println("æ‚¨çš„æ¶ˆè´¹é¢å·²ç»è¾¾åˆ°10000åœ†äº†ï¼æ­å–œæ‚¨ï¼Œå‡çº§ä¸ºé‡‘ç‰Œç”¨æˆ·");
-                        data.users.get(j).userLever="é‡‘ç‰Œç”¨æˆ·";
+                        System.out.println("ÄúµÄÏû·Ñ¶îÒÑ¾­´ïµ½10000Ô²ÁË£¡¹§Ï²Äú£¬Éı¼¶Îª½ğÅÆÓÃ»§");
+                        data.users.get(j).userLever="½ğÅÆÓÃ»§";
                     }
                 }
             }
         }
         menu.showBuy(data,s);
     }
-    //ä»¥åå¯ä»¥å¢åŠ ä¸€ä¸ªä½™é¢çš„å˜é‡
+    //ÒÔºó¿ÉÒÔÔö¼ÓÒ»¸öÓà¶îµÄ±äÁ¿
     public boolean pay(Data data,String s){
-        System.out.println("æ‚¨ç¡®è®¤è¦æ”¯ä»˜å—ï¼ŸY/yes");
+        System.out.println("ÄúÈ·ÈÏÒªÖ§¸¶Âğ£¿Y/yes");
         Scanner sc = new Scanner(System.in);
         String s1 = sc.next();
         if(s1.equals("y")||s1.equals("Y")||s1.equals("yes")||s1.equals("Yes")){
-            System.out.println("è¯·è¾“å…¥æ‚¨çš„å¯†ç ");
+            System.out.println("ÇëÊäÈëÄúµÄÃÜÂë");
             String s2 = sc.next();
             for (int i = 0; i < data.users.size(); i++) {
                 if (data.users.get(i).userName.equals(s)) {
                     if (data.users.get(i).password.equals(s2)){
-                        System.out.println("æ­å–œæ‚¨ï¼Œæ”¯ä»˜æˆåŠŸ");
+                        System.out.println("¹§Ï²Äú£¬Ö§¸¶³É¹¦");
                         return true;
                     }else if (!data.users.get(i).password.equals(s2)){
-                        System.out.println("æ”¯ä»˜å¯†ç é”™è¯¯ï¼");
+                        System.out.println("Ö§¸¶ÃÜÂë´íÎó£¡");
                         return false;
                     }
                 }
