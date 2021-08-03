@@ -36,5 +36,4 @@ public class verify {
         // 判断用户输入的信息是否和已有的信息一致
         return false;
     }
-
 }

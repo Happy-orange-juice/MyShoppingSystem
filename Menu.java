@@ -5,89 +5,93 @@ import java.util.Scanner;
  * @author 李宗
  */
 public class Menu {
-
     page page = new page();
     public void showPage(Data data){
         page.show_LoginMenu();
         verify ver = new verify();
         boolean flag;
         do {
-            // 发生操作错误，退出系统
-            // 输入一级菜单中的选择
             Menu menu = new Menu();
             Scanner scanner = new Scanner(System.in);
-            int i = scanner.nextInt();
-            // 根据用户对一级菜单的选择做出不同的响应，注意这里就是经典的switch-case的用法
-            switch (i) {
-                case 1: // 用户选择"登录系统"
-                    int j = 5;
-                    System.out.print("请输入您的用户名：");
-                    String s1 = scanner.next();
-                    // 处理登录系统的流程
-                    boolean flag1 = false;
-                    for (int k = 0; k < data.users.size(); k++) {
-                        if (data.users.get(k).userName.equals(s1)){
-                            flag1=true;
-                            break;
-                        }
-                    }
-                    if (flag1){
-                        for (int k = 0; k < j+1; k++) {
-                            if (k<4){
-                                if(ver.User_verify(data)){
-                                    menu.showUser(data,s1);
-                                }else {
-                                    System.out.println("您已经输错"+(k+1)+"次密码,还有"+(j-k-1)+"次机会");
-                                }
-                            } else if (k==5){
-                                System.out.println("对不起！您没有权限进入系统！谢谢!该账户已经锁死！");
-                                showPage(data);
+            String i = scanner.next();
+            try{
+                // 根据用户对一级菜单的选择做出不同的响应，注意这里就是经典的switch-case的用法
+                switch (i) {
+                    case "1": // 用户选择"登录系统"
+                        int j = 5;
+                        System.out.print("请输入您的用户名：");
+                        String s1 = scanner.next();
+                        // 处理登录系统的流程
+                        boolean flag1 = false;
+                        for (int k = 0; k < data.users.size(); k++) {
+                            if (data.users.get(k).userName.equals(s1)){
+                                flag1=true;
+                                break;
                             }
                         }
-                    }else {
-                        System.out.println("对不起，此用户不存在，请重新输入用户名：");
-                        showPage(data);
-                    }
-                    break;
+                        if (flag1){
+                            for (int k = 0; k < j+1; k++) {
+                                if (k<4){
+                                    if(ver.User_verify(data)){
+                                        menu.showUser(data,s1);
+                                    }else {
+                                        System.out.println("您已经输错"+(k+1)+"次密码,还有"+(j-k-1)+"次机会");
+                                    }
+                                } else if (k==5){
+                                    System.out.println("对不起！您没有权限进入系统！谢谢!该账户已经锁死！");
+                                    showPage(data);
+                                }
+                            }
+                        }else {
+                            System.out.println("对不起，此用户不存在，请重新输入用户名：");
+                            showPage(data);
+                        }
+                        break;
 
-                case 2: // 管理员选择"登录系统"
-                    int k = 5;
-                    System.out.print("请输入您的用户名：");
-                    String s2 = scanner.next();
-                    if (!data.master.M_username.equals(s2)){
-                        System.out.println("对不起，此用户不存在，请重新输入用户名：");
-                        showPage(data);
-                    }
-                    else {
-                        for (int l = 0; l<=k+1; l++) {
-                            if (l<=4){
-                                if(ver.Master_verify(data)){
-                                    menu.showMasterMenu(data);
-                                    break;
-                                }else {
-                                    System.out.println("您已经输错"+(l+1)+"次密码,还有"+(k-l-1)+"次机会");
+                    case "2": // 管理员选择"登录系统"
+                        int k = 5;
+                        System.out.print("请输入您的用户名：");
+                        String s2 = scanner.next();
+                        if (!data.master.M_username.equals(s2)){
+                            System.out.println("对不起，此用户不存在，请重新输入用户名：");
+                            showPage(data);
+                        }
+                        else {
+                            for (int l = 0; l<=k+1; l++) {
+                                if (l<=4){
+                                    if(ver.Master_verify(data)){
+                                        menu.showMasterMenu(data);
+                                        break;
+                                    }else {
+                                        System.out.println("您已经输错"+(l+1)+"次密码,还有"+(k-l-1)+"次机会");
+                                    }
+                                } else if (l==5){
+                                    System.out.println("对不起！您没有权限进入系统！谢谢!该账户已经锁死！");
+                                    showPage(data);
                                 }
-                            } else if (l==5){
-                                System.out.println("对不起！您没有权限进入系统！谢谢!该账户已经锁死！");
-                                showPage(data);
                             }
                         }
-                    }
-                    break;
-                case 3://用户新注册一个账号
-                    System.out.println("欢迎注册我们的账户");
-                    System.out.println("提示1：用户名必须大于5位");
-                    System.out.println("提示2：用户密码必须大于8位且必须由数字、大小写字母以及标点组成");
-                    User user = new User();
-                    user.user_register(data);
-                    break;
-                case 4: // 用户选择"退出"
-                    System.out.println("谢谢您的使用！");
-                    System.exit(0);
-                    break;
-                default: // 一级菜单输入错误，需要重新选择
-                    System.out.print("\n输入有误！请重新选择，输入数字: ");
-                    break;
+                        break;
+                    case "3"://用户新注册一个账号
+                        System.out.println("欢迎注册我们的账户");
+                        System.out.println("提示1：用户名必须大于5位");
+                        System.out.println("提示2：用户密码必须大于8位且必须由数字、大小写字母以及标点组成");
+                        User user = new User();
+                        user.user_register(data);
+                        break;
+                    case "4": // 用户选择"退出"
+                        System.out.println("谢谢您的使用！");
+                        System.exit(0);
+                        break;
+                    default: // 一级菜单输入错误，需要重新选择
+                        System.out.print("\n输入有误！请重新选择");
+                        menu.showPage(data);
+                        break;
+                }
+            }
+            catch (NumberFormatException numberFormatException){
+                System.out.println("请输入一个数字！");
+                menu.showPage(data);
             }
             flag=false;
         } while (flag);

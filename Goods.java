@@ -43,5 +43,4 @@ public class Goods {
     public void goods_add(Data data){
 
     }
-
 }
