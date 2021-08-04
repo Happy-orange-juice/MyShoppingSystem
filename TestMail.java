@@ -15,7 +15,7 @@ import javax.mail.internet.MimeMessage;
 public class TestMail {
     public static void main(String[] args) throws Exception {
         Properties prop = new Properties();
-        prop.setProperty("mail.host", "smtp.sohu.com");
+        prop.setProperty("mail.host", "smtp.qq.com");
         prop.setProperty("mail.transport.protocol", "smtp");
         prop.setProperty("mail.smtp.auth", "true");
         //使用JavaMail发送邮件的5个步骤
@@ -26,7 +26,7 @@ public class TestMail {
         //2、通过session得到transport对象
         Transport ts = session.getTransport();
         //3、使用邮箱的用户名和密码连上邮件服务器，发送邮件时，发件人需要提交邮箱的用户名和密码给smtp服务器，用户名和密码都通过验证之后才能够正常发送邮件给收件人。
-        ts.connect("smtp.qq.com", "1457271810@qq.com", "20020421LZ");
+        ts.connect("smtp.qq.com", "1457271810@qq.com", "bxszaksmzxukhbfh");
         //4、创建邮件
         Message message = createSimpleMail(session);
         //5、发送邮件
@@ -40,7 +40,7 @@ public class TestMail {
         //指明邮件的发件人
         message.setFrom(new InternetAddress("1457271810@qq.com"));
         //指明邮件的收件人，现在发件人和收件人是一样的，那就是自己给自己发
-        message.setRecipient(Message.RecipientType.TO, new InternetAddress("2370001925@qq.com"));
+        message.setRecipient(Message.RecipientType.TO, new InternetAddress("1457271810@qq.com"));
         //邮件的标题
         message.setSubject("只包含文本的简单邮件");
         //邮件的文本内容
