@@ -1,4 +1,4 @@
-package MyShoppingSystem_0_0;
+package MyShoppingSystem;
 
 /**
  * @author Àî×Ú
