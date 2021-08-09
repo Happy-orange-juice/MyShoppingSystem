@@ -2,6 +2,8 @@ package MyShoppingSystem;
 
 import java.util.Scanner;
 
+import static java.lang.Integer.parseInt;
+
 /**
  * @author 李宗
  */
@@ -24,16 +26,17 @@ public class Shopping {
     public void buy(Data data,String s){
         Scanner sc = new Scanner(System.in);
         System.out.println("请输入要购买的商品ID:");
-        int n = sc.nextInt();
-        System.out.println("请输入要购买的商品数量:");
-        int m = sc.nextInt();
-        for (int i = 0; i < data.goods.size(); i++) {
-            if (data.goods.get(i).goodsID==n){
-                for (int j = 0; j < data.users.size(); j++) {
-                    if (data.users.get(j).userName.equals(s)){
-                        if(m<=Integer.parseInt(data.goods.get(i).goods_number)) {
-                            data.users.get(j).user_bill += data.goods.get(i).goods_s_count*m;
-                        } else if(m>Integer.parseInt(data.goods.get(i).goods_number)){
+                        int n = sc.nextInt();
+                        System.out.println("请输入要购买的商品数量:");
+                        int m = sc.nextInt();
+                        for (int i = 0; i < data.goods.size(); i++) {
+                            if (data.goods.get(i).goodsID==n){
+                                for (int j = 0; j < data.users.size(); j++) {
+                                    if (data.users.get(j).userName.equals(s)){
+                                        if(m<= parseInt(data.goods.get(i).goods_number)) {
+                                            data.users.get(j).user_bill += data.goods.get(i).goods_s_count*m;
+                                            data.goods.get(i).goods_number = String.valueOf(parseInt(data.goods.get(i).goods_number)-m);
+                                        } else if(m> parseInt(data.goods.get(i).goods_number)){
                             System.out.println("对不起，库存不足");
                         }
                     }
@@ -45,17 +48,18 @@ public class Shopping {
     public void count(Data data,String s){
         for (int j = 0; j < data.users.size(); j++) {
             if (data.users.get(j).userName.equals(s)){
-                boolean flag;
+                boolean flag = false;
+                System.out.println(data.users.get(j).user_bill);
                 if (data.users.get(j).user_bill>=2000&&data.users.get(j).user_bill<=5000){
-                    System.out.println("您的消费额为："+data.users.get(j).user_bill);
-                    flag=pay(data,s);
-                    if (flag){
-                        System.out.println("您的消费额已经达到2000圆了！恭喜您，升级为铜牌用户");
-                        data.users.get(j).userLever="铜牌用户";
-                    }
-                } else if(data.users.get(j).user_bill>5000&&data.users.get(j).user_bill<=10000){
-                    System.out.println("您的消费额为："+data.users.get(j).user_bill);
-                    flag=pay(data,s);
+                        System.out.println("您的消费额为："+data.users.get(j).user_bill);
+                        flag=pay(data,s);
+                        if (flag){
+                            System.out.println("您的消费额已经达到2000圆了！恭喜您，升级为铜牌用户");
+                            data.users.get(j).userLever="铜牌用户";
+                        }
+                    } else if(data.users.get(j).user_bill>5000&&data.users.get(j).user_bill<=10000){
+                        System.out.println("您的消费额为："+data.users.get(j).user_bill);
+                        flag=pay(data,s);
                     if (flag){
                         System.out.println("您的消费额已经达到5000圆了！恭喜您，升级为银牌用户");
                         data.users.get(j).userLever="银牌用户";
@@ -67,13 +71,19 @@ public class Shopping {
                         System.out.println("您的消费额已经达到10000圆了！恭喜您，升级为金牌用户");
                         data.users.get(j).userLever="金牌用户";
                     }
+                } else {
+                    System.out.println("您的消费额为："+data.users.get(j).user_bill);
+                    flag=pay(data,s);
+                    if (flag){
+                        System.out.println("消费成功");
+                    }
                 }
             }
         }
         menu.showBuy(data,s);
     }
     //以后可以增加一个余额的变量
-    public boolean pay(Data data,String s){
+    public boolean pay(Data data,String s){//s是用户名
         System.out.println("您确认要支付吗？Y/yes");
         Scanner sc = new Scanner(System.in);
         String s1 = sc.next();
@@ -91,6 +101,11 @@ public class Shopping {
                     }
                 }
             }
+        } else {
+            System.out.println("对不起，请重新输入");
+            data.initial_goods();
+            System.out.println(data.goods.get(0).goods_number);
+            menu.showBuy(data,s);
         }
         return false;
     }
