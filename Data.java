@@ -95,7 +95,6 @@ public class Data {
     }
 
     public void update_goods(){
-
     }
 }
 

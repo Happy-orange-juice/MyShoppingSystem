@@ -27,20 +27,78 @@ public class Goods {
         System.out.println("请输入您要修改的商品编号：");
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        boolean flag = false;
         for (int i = 0; i < data.goods.size(); i++) {
             if(data.goods.get(i).goodsID==n){
-                flag = true;
+                page.show_Goods_change();
+                System.out.println("请输入您要修改的数据编号：");
+                String l = sc.next();
+                switch (l){
+                    case "1"->{
+                        System.out.println("请输入要修改后的商品名称：");
+                        String s = sc.next();
+                        data.goods.get(i).goodsName = s;
+                    }
+                    case "2"->{
+                        System.out.println("请输入要修改后的生产产家:");
+                        String s = sc.next();
+                        data.goods.get(i).Producer = s;
+                    }
+                    case "3"->{
+                        System.out.println("请输入要修改后的生产日期:");
+                        String s = sc.next();
+                        data.goods.get(i).goods_Date = s;
+                    }
+                    case "4"->{
+                        System.out.println("请输入要修改后的产品型号:");
+                        String s = sc.next();
+                        data.goods.get(i).goods_size = s;
+                    }
+                    case "5"->{
+                        System.out.println("请输入要修改后的产品数量:");
+                        String s = sc.next();
+                        data.goods.get(i).goods_number = s;
+                    }
+                    case "6"->{
+                        System.out.println("请输入要修改后的产品进价:");
+                        int s = sc.nextInt();
+                        data.goods.get(i).goods_count = s;
+                    }
+                    case "7"->{
+                        System.out.println("请输入要修改后的产品售价:");
+                        int s = sc.nextInt();
+                        data.goods.get(i).goods_s_count = s;
+                    }
+                }
             }
-        }
-        if (flag){
-            page.show_Goods_change();
-            System.out.println("请输入您要修改的数据编号：");
-            int l = sc.nextInt();
-
         }
     }
     public void goods_add(Data data){
-
+        Goods g = new Goods();
+        Scanner sc = new Scanner(System.in);
+        int n = data.goods.size();
+        System.out.println("新增商品编号已经自动生成为："+(n+1));
+        g.goodsID = n+1;
+        System.out.println("请输入要修改后的商品名称：");
+        String name = sc.next();
+        g.goodsName = name;
+        System.out.println("请输入要修改后的生产产家：");
+        String producer = sc.next();
+        g.Producer = producer;
+        System.out.println("请输入要修改后的生产日期：");
+        String date = sc.next();
+        g.goods_Date = date;
+        System.out.println("请输入要修改后的产品型号：");
+        String size = sc.next();
+        g.goods_size = size;
+        System.out.println("请输入要修改后的产品数量：");
+        String number = sc.next();
+        g.goods_number = number;
+        System.out.println("请输入要修改后的产品进价：");
+        int count = sc.nextInt();
+        g.goods_count = count;
+        System.out.println("请输入要修改后的产品售价：");
+        int s_count = sc.nextInt();
+        g.goods_s_count = s_count;
+        data.goods.add(g);
     }
 }

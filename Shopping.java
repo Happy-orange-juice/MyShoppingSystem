@@ -56,27 +56,29 @@ public class Shopping {
                         if (flag){
                             System.out.println("您的消费额已经达到2000圆了！恭喜您，升级为铜牌用户");
                             data.users.get(j).userLever="铜牌用户";
+                        }else {
+                            break;
                         }
                     } else if(data.users.get(j).user_bill>5000&&data.users.get(j).user_bill<=10000){
                         System.out.println("您的消费额为："+data.users.get(j).user_bill);
                         flag=pay(data,s);
-                    if (flag){
-                        System.out.println("您的消费额已经达到5000圆了！恭喜您，升级为银牌用户");
-                        data.users.get(j).userLever="银牌用户";
-                    }
+                        if (flag){
+                            System.out.println("您的消费额已经达到5000圆了！恭喜您，升级为银牌用户");
+                            data.users.get(j).userLever="银牌用户";
+                        }
                 } else if(data.users.get(j).user_bill>10000){
                     System.out.println("您的消费额为："+data.users.get(j).user_bill);
                     flag=pay(data,s);
                     if (flag){
                         System.out.println("您的消费额已经达到10000圆了！恭喜您，升级为金牌用户");
                         data.users.get(j).userLever="金牌用户";
-                    }
+                    }else break;
                 } else {
                     System.out.println("您的消费额为："+data.users.get(j).user_bill);
                     flag=pay(data,s);
                     if (flag){
                         System.out.println("消费成功");
-                    }
+                    } else break;
                 }
             }
         }
@@ -103,8 +105,7 @@ public class Shopping {
             }
         } else {
             System.out.println("对不起，请重新输入");
-            data.initial_goods();
-            System.out.println(data.goods.get(0).goods_number);
+            data.update_goods();
             menu.showBuy(data,s);
         }
         return false;
