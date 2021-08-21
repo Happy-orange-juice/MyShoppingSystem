@@ -95,6 +95,45 @@ public class Data {
     }
 
     public void update_goods(){
+        Connection c = null;
+        Statement stmt = null;
+        try {
+            Class.forName("org.sqlite.JDBC");
+            c = DriverManager.getConnection("jdbc:sqlite:data.db");
+            c.setAutoCommit(false);
+            System.out.println("Opened database successfully");
+
+            stmt = c.createStatement();
+            int n = goods.size();
+            for (int i = 1; i <= n; i++) {
+                String name = goods.get(i).goodsName;
+                String producer = goods.get(i).Producer;
+                String Date = goods.get(i).goods_Date;
+                String size = goods.get(i).goods_size;
+                String number = goods.get(i).goods_number;
+                int count = goods.get(i).goods_count;
+                int s_count = goods.get(i).goods_s_count;
+                String sql = "UPDATE GOODS set goodsName = name where ID=i;";
+                String sql1 = "UPDATE GOODS set Producer = producer where ID=i;";
+                String sql2 = "UPDATE GOODS set goods_size = size where ID=i;";
+                String sql3 = "UPDATE GOODS set goods_number = number where ID=i;";
+                String sql4 = "UPDATE GOODS set goods_count = count where ID=i;";
+                String sql5 = "UPDATE GOODS set goods_s_count = s_count where ID=i;";
+                stmt.executeUpdate(sql);
+                stmt.executeUpdate(sql1);
+                stmt.executeUpdate(sql2);
+                stmt.executeUpdate(sql3);
+                stmt.executeUpdate(sql4);
+                stmt.executeUpdate(sql5);
+            }
+            c.commit();
+            stmt.close();
+            c.close();
+        } catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        System.out.println("Operation done successfully");
     }
 }
 

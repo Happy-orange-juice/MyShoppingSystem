@@ -104,8 +104,17 @@ public class Shopping {
                 }
             }
         } else {
-            System.out.println("对不起，请重新输入");
-            data.update_goods();
+            System.out.println("正在取消购物");
+            for (int i = 0; i < 80; i++) {
+                System.out.print(".");
+                try {
+                    Thread.sleep(50);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            System.out.println();
+            System.out.println("加载完成:100%");
             menu.showBuy(data,s);
         }
         return false;

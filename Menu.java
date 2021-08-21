@@ -1,4 +1,5 @@
 package MyShoppingSystem;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -33,6 +34,19 @@ public class Menu {
                             for (int k = 0; k < j+1; k++) {
                                 if (k<4){
                                     if(ver.User_verify(data)){
+                                        System.out.println("正在登陆");
+                                        Random r = new Random();
+                                        int l = r.nextInt(100);
+                                        for (int m = 0; m < 40; m++) {
+                                            System.out.print("* ");
+                                            try {
+                                                Thread.sleep(l*2);
+                                            } catch (InterruptedException e) {
+                                                e.printStackTrace();
+                                            }
+                                        }
+                                        System.out.println();
+                                        System.out.println("加载完成:100%");
                                         menu.showUser(data,s1);
                                     }else {
                                         System.out.println("您已经输错"+(k+1)+"次密码,还有"+(j-k-1)+"次机会");
@@ -81,6 +95,19 @@ public class Menu {
                         break;
                     case "4": // 用户选择"退出"
                         System.out.println("谢谢您的使用！");
+                        System.out.println("正在退出中");
+                        Random r = new Random();
+                        int l = r.nextInt(100);
+                        for (int m = 0; m < 40; m++) {
+                            System.out.print("* ");
+                            try {
+                                Thread.sleep(l*2);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        /*data.update_goods();
+                         *data.update_people();*/
                         System.exit(0);
                         break;
                     default: // 一级菜单输入错误，需要重新选择
